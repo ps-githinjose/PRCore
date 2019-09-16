@@ -1,0 +1,137 @@
+﻿
+@model PayRollV1.Models.Employee
+
+@{ Layout = null; }
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Edit</title>
+
+</head>
+
+<body>
+
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+    @using (Html.BeginForm())
+    {
+
+        @Html.ValidationSummary(true)
+
+
+
+<fieldset>
+
+    <legend>EmployeeEdit</legend>
+
+    @Html.HiddenFor(model => model.EmpID)
+
+    <div class="editor-label">
+
+        @Html.LabelFor(model => model.Name)
+
+    </div>
+
+    <div class="editor-field">
+
+        @Html.EditorFor(model => model.Name)
+
+        @Html.ValidationMessageFor(model => model.Name)
+
+    </div>
+
+
+    <div class="editor-label">
+
+        Gender :
+
+    </div>
+
+    <div class="editor-field">
+
+        @Html.EditorFor(model => model.Gender)
+
+        @Html.ValidationMessageFor(model => model.Gender)
+
+    </div>
+    <div class="editor-label">
+
+        Age :
+
+    </div>
+
+    <div class="editor-field">
+
+        @Html.EditorFor(model => model.Age)
+
+        @Html.ValidationMessageFor(model => model.Age)
+
+    </div>
+    <div class="editor-label">
+
+      Phone Number :
+
+    </div>
+
+    <div class="editor-field">
+
+        @Html.EditorFor(model => model.Phone)
+
+        @Html.ValidationMessageFor(model => model.Phone)
+
+    </div>
+
+
+    <div class="editor-label">
+
+      Email Address :
+
+    </div>
+
+    <div class="editor-field">
+
+        @Html.EditorFor(model => model.Email)
+
+        @Html.ValidationMessageFor(model => model.Email)
+
+    </div>
+    <div class="editor-label">
+        Designation :
+    </div>
+    <div>
+        @Html.DropDownListFor(m=>m.DesignationID, new List<SelectListItem>()
+        {
+        new SelectListItem{Text="Associate consultant", Value="1" },
+        new SelectListItem{Text="Senior consultant", Value="5"},
+        new SelectListItem{Text="QA",Value ="6"}
+        }, "Select Designation")
+    </div>
+
+
+
+
+
+
+    <p>  <input type="submit" value="Save" /> </p>
+
+</fieldset>
+
+    }
+
+    <div>@Html.ActionLink("Back to List", "Index")</div>
+
+</body>
+
+</html>

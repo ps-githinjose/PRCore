@@ -1,0 +1,74 @@
+﻿
+@model PayRollV1.Models.Employee
+
+@{
+    ViewData["Title"] = "Salary details";
+}
+
+<style>
+</style>
+@*<body style="background-image:url('images/Pic.jpg.jpg')">*@
+<h2>SALARY DETAILS</h2>
+
+
+    @if (Model.BasicPay == 0)
+    {
+
+
+        @Html.ActionLink("AddSalary", "AddSalary", new { id = Model.EmpID })
+    }
+    else
+    {
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Employee Name
+            </th>
+
+            <th>
+                Basic Salary
+            </th>
+            <th>
+                HRA
+            </th>
+            <th>
+                TA
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.BasicPay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.HRA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.TA)
+                </td>
+
+                <td>
+
+
+                    @Html.ActionLink("Edit Salary", "SalaryEdit", new { id = Model.EmpID })
+                    <div>@Html.ActionLink("Back to List", "Index","Home")</div>
+
+                </td>
+            </tr>
+        
+    </tbody>
+</table>
+    }
+@*</body>*@
+
+

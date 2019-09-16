@@ -1,0 +1,97 @@
+﻿@model IEnumerable<PayRollV1.Models.Employee>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<style>
+    
+
+h2
+{
+color:deepskyblue;
+}
+th{
+    color:forestgreen;
+}
+.EmployeeGet
+{
+    color:orangered;
+}
+.Sal
+{
+    color:orangered;
+}
+.Pay
+{
+    color:seagreen;
+}
+ </style>
+@*<body style="background-image:url('images/Pic.jpg.jpg')">*@
+    <h2>PAY ROLL MANAGEMENT</h2>
+
+    <p>
+
+        <a class="EmployeeGet" asp-action="AddEmployee">Add New Employee</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Employee Name
+                </th>
+
+                <th>
+                    Designation Name
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </th>
+                <th>
+                    Age
+                </th>
+                <th>
+                    Contact Number
+                </th>
+                <th>
+                    Email Address
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DesignationName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.EmpID })
+                    @Html.ActionLink("Details", "Details", new { id = item.EmpID })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.EmpID })
+
+                    @Html.ActionLink("Salary Details", "SalaryDetails", "Salary", new { id = item.EmpID }, new { @class = "Sal" })
+                    @Html.ActionLink("Pay Roll", "PayRoll", "PayRoll", new { id = item.EmpID }, new { @class = "Pay" })
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+ @*</body>*@

@@ -1,0 +1,118 @@
+﻿@model PayRollV1.Models.Employee
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+
+
+@{
+
+    Layout = null;
+
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Index</title>
+
+</head>
+
+<body>
+
+    <fieldset>
+
+        <legend>EmployeeDetail</legend>
+
+        <div class="display-label">
+
+         Name :
+
+        </div>
+
+        <div class="display-field">
+
+            @Html.DisplayFor(model => model.Name)
+
+        </div>
+
+
+
+        <div class="display-label">
+
+          Age :
+
+        </div>
+
+        <div class="display-field">
+
+            @Html.DisplayFor(model => model.Age)
+
+        </div>
+
+        <div class="display-label">
+
+           Gender :
+
+        </div>
+        <div class="display-field">
+
+            @Html.DisplayFor(model => model.Gender)
+
+        </div>
+        <div class="display-label">
+
+         Phone Number :
+
+        </div>
+
+        <div class="display-field">
+
+            @Html.DisplayFor(model => model.Phone)
+
+        </div>
+        <div class="display-label">
+
+            Email Address :
+
+        </div>
+        <div class="display-field">
+
+            @Html.DisplayFor(model => model.Email)
+
+        </div>
+        <div class="display-label">
+
+           Designation :
+
+        </div>
+        <div class="display-field">
+
+            @Html.DisplayFor(model => model.DesignationName)
+
+        </div>
+
+
+
+    </fieldset>
+
+    <p>
+
+        @Html.ActionLink("Edit", "Edit", new { id = Model.EmpID }) |
+
+        @Html.ActionLink("Back to List", "Index")
+
+    </p>
+
+</body>
+
+</html>

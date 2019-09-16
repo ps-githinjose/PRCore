@@ -1,0 +1,110 @@
+﻿
+@model PayRollV1.Models.Employee
+@{
+    ViewData["Title"] = "PAY ROLL DETAILS";
+}
+
+    <h2>PAY ROLL DETAILS</h2>
+
+
+
+@{
+
+    Layout = null;
+
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Index</title>
+
+</head>
+
+<body>
+    <h3 onclick="window.print();"> Print </h3>  @*it is javascript*@
+
+<fieldset>
+
+    <legend>Details</legend>
+
+    <div class="display-label">
+
+        @Html.DisplayNameFor(model => model.Name)
+
+    </div>
+
+    <div class="display-field">
+
+        @Html.DisplayFor(model => model.Name)
+
+    </div>
+
+
+
+    <div class="display-label">
+
+        @Html.DisplayNameFor(model => model.TotalSal)
+
+    </div>
+
+    <div class="display-field">
+
+        @Html.DisplayFor(model => model.TotalSal)
+
+    </div>
+
+    <div class="display-label">
+
+        @Html.DisplayNameFor(model => model.Leaves)
+
+    </div>
+
+    <div class="display-field">
+
+        @Html.DisplayFor(model => model.Leaves)
+
+    </div>
+    <div class="display-label">
+
+        @Html.DisplayNameFor(model => model.Month)
+
+    </div>
+    <div class="display-field">
+
+        @Html.DisplayFor(model => model.Month)
+
+    </div>
+    <div class="display-label">
+
+        @Html.DisplayNameFor(model => model.Salary)
+
+    </div>
+    <div class="display-field">
+
+        @Html.DisplayFor(model => model.Salary)
+
+    </div>
+
+
+
+</fieldset>
+
+    <p>
+
+        |
+
+        @Html.ActionLink("Back to List", "Index","Home")
+
+    </p>
+
+</body>
+
+</html>
